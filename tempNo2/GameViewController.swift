@@ -8,6 +8,8 @@
 
 import UIKit
 import SpriteKit
+import CoreData
+
 
 extension SKNode {
     class func unarchiveFromFile(file : NSString) -> SKNode? {
@@ -25,14 +27,37 @@ extension SKNode {
     }
 }
 
-class GameViewController: UIViewController {
 
+extension SKNode {
+    class func archiveFromFile(file : NSString) -> SKNode? {
+        if let path = NSBundle.mainBundle().pathForResource(file, ofType: "sks") {
+            var sceneData = NSData(contentsOfFile: path, options: .DataReadingMappedIfSafe, error: nil)!
+            var archiver = NSKeyedUnarchiver(forReadingWithData: sceneData)
+            
+            archiver.setClass(self.classForKeyedUnarchiver(), forClassName: "SKScene")
+            let scene = archiver.decodeObjectForKey(NSKeyedArchiveRootObjectKey) as LevelScene
+            archiver.finishDecoding()
+            return scene
+        } else {
+            return nil
+        }
+    }
+}
+
+class GameViewController: UIViewController, NSFetchedResultsControllerDelegate {
+    var managedObjectContext: NSManagedObjectContext?
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
+        
+        if let scene = LevelScene.archiveFromFile("GameScene") as? LevelScene {
             // Configure the view.
+            
             let skView = self.view as SKView
+            
+
             skView.showsFPS = true
             skView.showsNodeCount = true
             
@@ -41,7 +66,9 @@ class GameViewController: UIViewController {
             
             /* Set the scale mode to scale to fit the window */
             scene.scaleMode = .AspectFill
+            scene.size = skView.bounds.size
             
+            scene.managedObjectContext = self.managedObjectContext
             skView.presentScene(scene)
         }
     }

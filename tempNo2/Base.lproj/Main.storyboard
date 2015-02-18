@@ -1,13 +1,166 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="g0d-tj-xsd">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="3CA-i8-phc">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="toC-5k-pZj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="g0d-tj-xsd" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6ac-VS-Vfb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="heD-G2-ccP" kind="relationship" relationship="rootViewController" id="opx-JA-O47"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-759" y="267.75"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="Vv5-1y-a1t">
+            <objects>
+                <viewController id="heD-G2-ccP" customClass="HomeViewController" customModule="tempNo2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9d5-Gk-Qq3"/>
+                        <viewControllerLayoutGuide type="bottom" id="3bb-ri-Adg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ncC-ih-iqe">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eWb-yz-fy2">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meowu" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grU-vp-Y6J">
+                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="55"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="grU-vp-Y6J" firstAttribute="centerY" secondItem="eWb-yz-fy2" secondAttribute="centerY" id="Sga-dN-zLY"/>
+                                    <constraint firstItem="grU-vp-Y6J" firstAttribute="centerX" secondItem="eWb-yz-fy2" secondAttribute="centerX" id="cYj-un-gRz"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="grU-vp-Y6J"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="Sga-dN-zLY"/>
+                                        <exclude reference="cYj-un-gRz"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="subviews">
+                                        <include reference="grU-vp-Y6J"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="Sga-dN-zLY"/>
+                                        <include reference="cYj-un-gRz"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="64" width="400" height="313"/>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EZ9-G1-8Or">
+                                <rect key="frame" x="0.0" y="368" width="600" height="232"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8y-K3-4fr">
+                                        <rect key="frame" x="280" y="30" width="40" height="34"/>
+                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="23"/>
+                                        <state key="normal" title="Start">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="180" y="30" width="40" height="34"/>
+                                        </variation>
+                                        <connections>
+                                            <segue destination="BV1-FR-VrT" kind="show" identifier="showGameSegue" id="82l-Qq-Qjh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="O8y-K3-4fr" secondAttribute="centerX" id="HFd-CF-v7u"/>
+                                    <constraint firstAttribute="centerY" secondItem="O8y-K3-4fr" secondAttribute="centerY" id="pN3-Gt-GbB"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="HFd-CF-v7u"/>
+                                        <exclude reference="pN3-Gt-GbB"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="HFd-CF-v7u"/>
+                                        <include reference="pN3-Gt-GbB"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="568" width="400" height="232"/>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="EZ9-G1-8Or" secondAttribute="trailing" id="3RB-IQ-M6R"/>
+                            <constraint firstAttribute="trailing" secondItem="eWb-yz-fy2" secondAttribute="trailing" id="61M-HC-BzI"/>
+                            <constraint firstItem="EZ9-G1-8Or" firstAttribute="height" secondItem="eWb-yz-fy2" secondAttribute="height" id="90P-NZ-UKr"/>
+                            <constraint firstItem="eWb-yz-fy2" firstAttribute="leading" secondItem="ncC-ih-iqe" secondAttribute="leading" id="EqN-Z8-X5G"/>
+                            <constraint firstItem="EZ9-G1-8Or" firstAttribute="top" secondItem="eWb-yz-fy2" secondAttribute="bottom" id="YbT-GA-Jk2"/>
+                            <constraint firstItem="eWb-yz-fy2" firstAttribute="top" secondItem="9d5-Gk-Qq3" secondAttribute="bottom" id="hPI-Ax-dGW"/>
+                            <constraint firstItem="EZ9-G1-8Or" firstAttribute="leading" secondItem="ncC-ih-iqe" secondAttribute="leading" id="o7Y-Sy-Asc"/>
+                            <constraint firstItem="3bb-ri-Adg" firstAttribute="top" secondItem="EZ9-G1-8Or" secondAttribute="bottom" id="zdP-kg-9Qb"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="eWb-yz-fy2"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="3RB-IQ-M6R"/>
+                                <exclude reference="90P-NZ-UKr"/>
+                                <exclude reference="YbT-GA-Jk2"/>
+                                <exclude reference="o7Y-Sy-Asc"/>
+                                <exclude reference="zdP-kg-9Qb"/>
+                                <exclude reference="61M-HC-BzI"/>
+                                <exclude reference="EqN-Z8-X5G"/>
+                                <exclude reference="hPI-Ax-dGW"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="eWb-yz-fy2"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="3RB-IQ-M6R"/>
+                                <include reference="90P-NZ-UKr"/>
+                                <include reference="YbT-GA-Jk2"/>
+                                <include reference="o7Y-Sy-Asc"/>
+                                <include reference="zdP-kg-9Qb"/>
+                                <include reference="61M-HC-BzI"/>
+                                <include reference="EqN-Z8-X5G"/>
+                                <include reference="hPI-Ax-dGW"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="gOL-ul-TxW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YHB-L1-qqo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-29" y="261"/>
+        </scene>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="tempNo2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="maK-i9-Uhn"/>
                         <viewControllerLayoutGuide type="bottom" id="khH-OB-KpY"/>
@@ -15,11 +168,12 @@
                     <view key="view" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="664" y="393"/>
         </scene>
     </scenes>
 </document>
